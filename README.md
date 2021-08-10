@@ -1,41 +1,39 @@
-## JobBot Assessment
+## User Signup Assesment
 
-An application that implements a subscription order process for a cloud storage provider. 
+An application that implements a user signup. 
 
 View it here: https://suborder.herokuapp.com/
 
-Git repository URL: https://github.com/Shock451/redesigned-enigma
+Git repository URL: https://github.com/Tueloper/user-registration.git
 
 
 ### Requirements
-- If the user selects upfront payment, the total price should be reduced by 10%
-- Current selected subscription and final price should be shown on every step
-- Subscription prices should be retrieved from https://cloud-storage-prices-moberries.herokuapp.com/prices
 - All parameters should be required
-- It should be possible to change steps by clicking on the Next or Back button.
+- Must click on terms and aggreement checkbox
+- Passwords must match
 - Every step needs to be completed in order to see the next one.
-- Confirm button click handler should send data to the API endpoint https://httpbin.org/post
+- Confirm button click handler should send data to the API endpoint https://qnfpyomao9.execute-api.us-east-2.amazonaws.com/default/register-users
 
 
-### Built with
+### Client Side Built with
 - [React](https://reactjs.org/) - React Framework
 - [Material UI](https://material-ui.com/) - React components for faster and easier web development.
 - [Formik](https://formik.org/docs/overview) - Build forms in React
 - [Yup](https://github.com/jquense/yup) - JavaScript object schema validator
 
 
+### Server Side Built with
+- [AWS Lambda](https://aws.amazon.com/lambda/?nc2=type_a/) - AWS Serverless Function
+- [NodeJs](https://nodejs.org/en/) - Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+- [Amazon DynamoDB](https://aws.amazon.com/dynamodb/?trk=ps_a134p000006padxAAA&trkCampaign=acq_paid_search_brand&sc_channel=PS&sc_campaign=acquisition_EEM&sc_publisher=Google&sc_category=Database&sc_country=EEM&sc_geo=EMEA&sc_outcome=acq&sc_detail=dynamodb&sc_content=DynamoDB_e&sc_matchtype=e&sc_segment=536452473269&sc_medium=ACQ-P|PS-GO|Brand|Desktop|SU|Database|DynamoDB|EEM|EN|Text|xx|Non-EU&s_kwcid=AL!4422!3!536452473269!e!!g!!dynamodb&ef_id=CjwKCAjwx8iIBhBwEiwA2quaqzTOGJgO-BnGIpwBj4qj7pX0tf6pqQL5T8-J3HNUdq2jzZZCQ2t5ZBoCSXsQAvD_BwE:G:s&s_kwcid=AL!4422!3!536452473269!e!!g!!dynamodb) - Database
+
+
 ### Process
-The subscription order process has 3 steps:
-1. Select subscription parameters:
-    - Duration: 3/6/12 Months (default: 12)
-    - Amount of gigabytes in a cloud: 5/10/50 (default: 5)
-    - Upfront payment: yes/no (default: no)
-1. Payment data:
-    - Credit card number
-    - Credit card expiration date
-    - Credit card security code
-3. Confirmation
-    - Summary of the selected subscription including total price and price per GB.
-    - Email of the user
-    - Terms and conditions agreement checkbox
-    - Confirmation button
+The form process has 2 steps:
+1. Input User Details:
+    - Name (required)
+    - Email (required)
+2. Input Password:
+    - Password (required)
+    - Confirm Password (required)
+
