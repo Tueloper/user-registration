@@ -2,7 +2,8 @@
 
 An application that implements a user signup. 
 
-View it here: https://suborder.herokuapp.com/
+View it here: https://user-registration-test.netlify.app
+[![Netlify Status](https://api.netlify.com/api/v1/badges/86ee9240-f044-4deb-b4e1-1afa79accfa3/deploy-status)](https://app.netlify.com/sites/user-registration-test/deploys)
 
 Git repository URL: https://github.com/Tueloper/user-registration.git
 
