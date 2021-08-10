@@ -128,6 +128,7 @@ function Form({
                   <FormControl required className={classes.formControl}>
                     <TextField
                       name="password"
+                      type="password"
                       required
                       fullWidth
                       className={classes.formControl}
@@ -145,6 +146,7 @@ function Form({
                   <FormControl required className={classes.formControl}>
                     <TextField
                       name="password2"
+                      type="password"
                       required
                       fullWidth
                       className={classes.formControl}
