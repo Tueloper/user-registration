@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types"
 
 import {
   Step,
@@ -81,6 +82,18 @@ function RegistrationForm(props: any) {
       </div>
     </div>
   );
+}
+
+
+RegistrationForm.propTypes = {
+  /**
+   * component props
+   */
+   steps: PropTypes.array.isRequired,
+}
+
+RegistrationForm.defaultProps = {
+  steps: []
 }
 
 export default RegistrationForm;

@@ -1,5 +1,6 @@
 import React from "react";
 import { Formik } from "formik";
+import PropTypes from "prop-types"
 
 import { UserSchema } from "./schemas";
 
@@ -47,11 +48,13 @@ function Form({
         validationSchema={UserSchema}
         onSubmit={async (values) => {
           const { password2, ...data } = values;
-          await fetch("https://qnfpyomao9.execute-api.us-east-2.amazonaws.com/default/register-users", {
+          // const url = process.env.REACT_APP_API_URI
+
+          const user : object = await fetch('https://qnfpyomao9.execute-api.us-east-2.amazonaws.com/default/register-users', {
             method: "POST",
             body: JSON.stringify(data),
           });
-          // handle failure here
+          console.log(user);
           handleNext();
         }}
       >
@@ -205,6 +208,35 @@ function Form({
       </Formik>
     </div>
   );
+}
+
+Form.propTypes = {
+  /**
+   * Form next handler
+   */
+  handleNext: PropTypes.func.isRequired,
+
+  /**
+   * Form back handler
+   */
+   handleBack: PropTypes.func.isRequired,
+  
+  /**
+   * current active step
+   */
+   activeStep: PropTypes.number.isRequired,
+
+  /**
+   * final step
+   */
+   isFinalStep: PropTypes.bool.isRequired,
+}
+
+Form.defaultProps = {
+  handleNext: () => {},
+  handleBack: () => {},
+  activeStep: 0,
+  isFinalStep: false,
 }
 
 export default Form;
