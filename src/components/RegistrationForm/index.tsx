@@ -12,20 +12,41 @@ import {
 import useStyles from "./styles";
 import Form from './Form';
 
+/**
+ * Component for registration users
+ *
+ * @component
+ * @param props
+ * @example
+ * const user = {1
+ *    name = 'Jitendra Nirnejak'
+ *    email = 'jitendraNirnejak@gmail.com'
+ *    password = 'Jite@56fb'
+ * @return {string} 'Your Account Has Been Created Successfully!'
+ */
 function RegistrationForm(props: any) {
   const classes = useStyles();
   let { steps } = props;
   const [activeStep, setActiveStep] = React.useState(0);
   const isFinalStep = activeStep === steps.length - 1;
 
+  /**
+   * function for moving the form to the next page
+   */
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 
+  /**
+   * function for moving the form backwards to the previous page
+   */
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
+  /**
+   * function used to reset the page flow to the initiate state
+   */
   const handleReset = () => {
     setActiveStep(0);
   };

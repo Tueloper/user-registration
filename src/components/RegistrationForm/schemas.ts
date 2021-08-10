@@ -1,5 +1,11 @@
 import * as Yup from "yup";
 
+/**
+ * validate user parameters during signup
+ * @function
+ * @param {object} payload - user object
+ * @returns {object | boolean} - returns a boolean or an error object
+ */
 const UserSchema = Yup.object().shape({
   name: Yup.string().required(),
   password: Yup.string().required().matches(

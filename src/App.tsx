@@ -7,13 +7,7 @@ import RegistrationForm from "./components/RegistrationForm";
 /**
  * Function for defining material UI styles
  *
- * @component
- * @example
- * const age = 21
- * const name = 'Jitendra Nirnejak'
- * return (
- *   <User age={age} name={name} />
- * )
+ * @params theme
  */
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -29,6 +23,10 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
+
+/**
+ * Function to initiate react application.
+ */
 function App() {
   const classes = useStyles();
   const steps = [

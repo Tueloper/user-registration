@@ -22,6 +22,10 @@ interface Props {
   isFinalStep: boolean;
 }
 
+/**
+ * function for inputing the user form details
+ * @param Props
+ */
 function Form({
   handleNext,
   handleBack,
