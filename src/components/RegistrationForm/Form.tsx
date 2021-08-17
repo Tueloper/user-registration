@@ -16,6 +16,7 @@ import {
 import TextField from "../CustomTextField";
 import useStyles from "./styles";
 
+const API_URL:string = process.env.REACT_APP_API_URI!;
 interface Props {
   handleNext: () => void;
   handleBack: () => void;
@@ -48,9 +49,8 @@ function Form({
         validationSchema={UserSchema}
         onSubmit={async (values) => {
           const { password2, ...data } = values;
-          // const url = process.env.REACT_APP_API_URI
 
-          const user : object = await fetch('https://qnfpyomao9.execute-api.us-east-2.amazonaws.com/default/register-users', {
+          const user = await fetch(API_URL, {
             method: "POST",
             body: JSON.stringify(data),
           });
