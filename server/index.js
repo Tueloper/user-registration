@@ -18,9 +18,7 @@ exports.handler = (event, context, callback) => {
     saveUser(userId, body).then(() => {
         callback(null, {
             statusCode: 201,
-            body: JSON.stringify({
-                ...body, id: userId
-            }),
+            body: JSON.stringify({ body }),
             headers: {
                 'Access-Control-Allow-Origin': '*',
             },

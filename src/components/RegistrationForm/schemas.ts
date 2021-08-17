@@ -7,7 +7,7 @@ import * as Yup from "yup";
  * @returns {object | boolean} - returns a boolean or an error object
  */
 const UserSchema = Yup.object().shape({
-  name: Yup.string().required(),
+  name: Yup.string(),
   password: Yup.string().required().matches(
     /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
     "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
